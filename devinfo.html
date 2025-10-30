@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moonify Dev Info</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #07090c;
+            color: #cbcfd3;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Background Effects */
+        .background-effects {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glow-orbs {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+        }
+
+        .orb-1 {
+            width: 500px;
+            height: 500px;
+            background: #58a0f0;
+            top: -200px;
+            right: -100px;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: #615585;
+            bottom: -150px;
+            left: -100px;
+            animation: float 15s infinite ease-in-out reverse;
+        }
+
+        .orb-3 {
+            width: 300px;
+            height: 300px;
+            background: #58a0f0;
+            top: 50%;
+            left: 50%;
+            animation: float 25s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+
+        /* Container */
+        .site-wrapper {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            padding: 80px 20px 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 0 80px;
+        }
+
+        h1 {
+            font-size: 72px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #58a0f0 0%, #7bb3f5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: #8a90a0;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: #8a90a0;
+        }
+
+        /* Dev Info List */
+        .dev-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .dev-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .dev-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(88, 160, 240, 0.3);
+        }
+
+        .dev-question {
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .dev-answer {
+            color: #8a90a0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #8a90a0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 80px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 48px;
+            }
+
+            .section-header h2 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-effects">
+        <div class="glow-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+    </div>
+
+    <div class="site-wrapper">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1>
+                    <span class="gradient-text">Moonify</span> Dev Info
+                </h1>
+                <p class="hero-description">
+                    Commonly asked questions about our development process and practices.
+                </p>
+            </section>
+
+            <!-- Dev Info Section -->
+            <section class="dev-section">
+                <div class="section-header">
+                    <h2>Development Insights</h2>
+                    <p>Answers to common questions about how Moonify is built</p>
+                </div>
+                <div class="dev-container">
+                    <div class="dev-item">
+                        <div class="dev-question">Is everything skid?</div>
+                        <div class="dev-answer">
+                            No, we use open source based and mod them.
+                        </div>
+                    </div>
+
+                    <div class="dev-item">
+                        <div class="dev-question">If LX63 isn't safe, but you use their base how is it safe?</div>
+                        <div class="dev-answer">
+                            Because we mod it with anti ban and safety measures.
+                        </div>
+                    </div>
+
+                    <div class="dev-item">
+                        <div class="dev-question">Xeno is considered a rat, and you use it?</div>
+                        <div class="dev-answer">
+                            Xeno is considered a rat many times for its injection ways. It is safe just slightly more false positives.
+                        </div>
+                    </div>
+
+                    <div class="dev-item">
+                        <div class="dev-question">On virus detection sites why does it detect moonify?</div>
+                        <div class="dev-answer">
+                            False positives. We have a few false positives from the way moding works, and our obfuscation.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>© 2025 Moon Softworks. All rights reserved.</p>
+                <p style="color: #8a90a0;">website dev credits: "@torsotracer."</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
